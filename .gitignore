@@ -33,3 +33,13 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+### RubyMine+all Patch ###
+# Ignore everything but code style settings and run configurations
+# that are supposed to be shared within teams.
+.idea/*
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
