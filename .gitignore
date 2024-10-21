@@ -34,6 +34,10 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+/config/credentials/*
+!/config/credentials/
+!/config/credentials/.keep
+
 ### RubyMine+all Patch ###
 # Ignore everything but code style settings and run configurations
 # that are supposed to be shared within teams.
