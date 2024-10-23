@@ -5,12 +5,12 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
 
-    render json: @groups
+    render_json :success, data: @groups
   end
 
   # GET /groups/1
   def show
-    render json: @group
+    render_json :success, data: @group
   end
 
   # POST /groups
@@ -18,18 +18,18 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      render json: @group, status: :created, location: @group
+      render_json :success, data: @group, status_code: :created, location: @group
     else
-      render json: @group.errors, status: :unprocessable_entity
+      render_json :fail, status_code: :unprocessable_entity, field: @group.errors
     end
   end
 
   # PATCH/PUT /groups/1
   def update
     if @group.update(group_params)
-      render json: @group
+      render_json :success, data: @group
     else
-      render json: @group.errors, status: :unprocessable_entity
+      render_json :fail, status_code: :unprocessable_entity, field: @group.errors
     end
   end
 
