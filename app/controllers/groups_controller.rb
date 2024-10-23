@@ -3,9 +3,9 @@ class GroupsController < ApplicationController
 
   # GET /groups
   def index
-    @groups = Group.all
+    paginated_groups = Paginator.new(Group).paginate(page: params[:page], per: params[:per])
 
-    render_json :success, data: @groups
+    render_json :success, data: paginated_groups
   end
 
   # GET /groups/1
