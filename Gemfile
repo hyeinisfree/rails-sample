@@ -45,5 +45,3 @@ group :hyein_local, :development, :test do
 
   gem "dotenv-rails"
 end
-
-

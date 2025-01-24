@@ -1,5 +1,5 @@
 module ApiResponse
-  VALID_STATUSES = [:success, :fail, :error].freeze
+  VALID_STATUSES = [ :success, :fail, :error ].freeze
 
   def render_json(status, status_code: nil, code: nil, message: nil, data: nil, field: nil, location: nil)
     validate_status!(status)
